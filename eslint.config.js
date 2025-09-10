@@ -6,6 +6,7 @@ import tseslint from 'typescript-eslint'
 import { defineConfig } from 'eslint/config'
 import prettier from 'eslint-config-prettier'
 import importPlugin from 'eslint-plugin-import'
+import jsxA11y from 'eslint-plugin-jsx-a11y'
 
 export default defineConfig([
 	{ ignores: ['dist'] },
@@ -23,8 +24,10 @@ export default defineConfig([
 		},
 		plugins: {
 			import: importPlugin,
+			'jsx-a11y': jsxA11y,
 		},
 		rules: {
+			...jsxA11y.configs.recommended.rules,
 			'import/order': [
 				'error',
 				{
