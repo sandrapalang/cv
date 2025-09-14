@@ -1,9 +1,15 @@
+import Cv from './views/Cv'
+
 function App() {
 	return (
-		<>
-			<p>Hello, World!</p>
-		</>
-	);
+		<div className="cv">
+			<main>
+				<div className="cv-containers">
+					<Cv />
+				</div>
+			</main>
+		</div>
+	)
 }
 
-export default App;
+export default App
