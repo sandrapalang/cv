@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 interface AccordionProps {
 	startDate: string
@@ -19,8 +19,14 @@ const Accordion: React.FC<AccordionProps> = ({
 	content,
 	skills,
 }) => {
+	const [isOpen, setIsOpen] = useState(false)
+
+	const handleToggle = () => {
+		setIsOpen(!isOpen)
+	}
+
 	return (
-		<div className="accordion">
+		<div className={`accordion${isOpen ? ' open' : ''}`} onClick={handleToggle}>
 			<div className="accordion-header">
 				{(startDate || endDate) && (
 					<div className="date">
@@ -32,26 +38,27 @@ const Accordion: React.FC<AccordionProps> = ({
 				)}
 				<h3 className="title">{title}</h3>
 			</div>
-
-			<div className="accordion-content">
-				<div className="header">
-					<p>
-						på {company} {school}
-					</p>
-					<div className="content">
-						{content?.map((paragraph, index) => (
-							<p key={index}>{paragraph}</p>
-						))}
-					</div>
-					<div className="skills">
-						{skills?.map((skill, index) => (
-							<p key={index} className="skill">
-								{skill}
-							</p>
-						))}
+			{isOpen && (
+				<div className="accordion-content">
+					<div className="header">
+						<p>
+							på {company} {school}
+						</p>
+						<div className="content">
+							{content?.map((paragraph, index) => (
+								<p key={index}>{paragraph}</p>
+							))}
+						</div>
+						<div className="skills">
+							{skills?.map((skill, index) => (
+								<p key={index} className="skill">
+									{skill}
+								</p>
+							))}
+						</div>
 					</div>
 				</div>
-			</div>
+			)}
 		</div>
 	)
 }
