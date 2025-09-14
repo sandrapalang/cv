@@ -24,6 +24,7 @@ const Accordion: React.FC<AccordionProps> = ({
 
 	const [isOpen, setIsOpen] = useState(false)
 	const [accordionHeight, setAccordionHeight] = useState('40px')
+	const [rotation, setRotation] = useState(0)
 
 	useEffect(() => {
 		if (isOpen && contentRef.current) {
@@ -36,6 +37,7 @@ const Accordion: React.FC<AccordionProps> = ({
 
 	const handleToggle = () => {
 		setIsOpen(!isOpen)
+		setRotation((prev) => prev + 180)
 	}
 
 	return (
@@ -65,7 +67,13 @@ const Accordion: React.FC<AccordionProps> = ({
 					</div>
 				)}
 				<h3 className="title">{title}</h3>
-				<ChevronDown />
+				<span
+					className="chevron-icon"
+					style={{ transform: `rotate(${rotation}deg)` }}
+					aria-hidden="true"
+				>
+					<ChevronDown />
+				</span>
 			</div>
 			{isOpen && (
 				<div className="accordion-content" ref={contentRef}>
