@@ -1,0 +1,76 @@
+.accordion {
+	background: none;
+	border: none;
+	border-bottom: 1px solid var(--color-text-primary-alpha);
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	padding: 10px 0 0;
+	width: 100%;
+
+	&-header {
+		align-items: center;
+		background: none;
+		border: none;
+		display: flex;
+		justify-content: space-between;
+		outline: none;
+		position: relative;
+		text-transform: uppercase;
+		width: 100%;
+
+		.date {
+			width: 30%;
+		}
+
+		.title {
+			flex-grow: 1;
+			min-width: 256px;
+		}
+	}
+
+	&-content {
+		display: flex;
+		justify-content: flex-end;
+		overflow: hidden;
+		padding: 8px 0 0;
+		width: 100%;
+
+		.header {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			width: 70%;
+
+			> p {
+				font-size: 0.75rem;
+				font-weight: 350;
+				letter-spacing: 0.035rem;
+			}
+
+			.content {
+				display: flex;
+				flex-direction: column;
+				gap: 24px;
+				margin: 14px 0 18px;
+				width: 100%;
+			}
+
+			.skills {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 4px;
+				width: 100%;
+
+				.skill {
+					border: 0.5px solid var(--color-text-primary-alpha);
+					border-radius: 16px;
+					font-size: 12px;
+					line-height: 1.5;
+					padding: 2px 8px;
+				}
+			}
+		}
+	}
+}
