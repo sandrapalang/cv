@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react'
+import ChevronDown from '../icons/ChevronDown'
 
 interface AccordionProps {
 	startDate: string
@@ -64,6 +65,7 @@ const Accordion: React.FC<AccordionProps> = ({
 					</div>
 				)}
 				<h3 className="title">{title}</h3>
+				<ChevronDown />
 			</div>
 			{isOpen && (
 				<div className="accordion-content" ref={contentRef}>
