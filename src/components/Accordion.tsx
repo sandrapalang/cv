@@ -26,7 +26,19 @@ const Accordion: React.FC<AccordionProps> = ({
 	}
 
 	return (
-		<div className={`accordion${isOpen ? ' open' : ''}`} onClick={handleToggle}>
+		<div
+			className={`accordion${isOpen ? ' open' : ''}`}
+			role="button"
+			aria-expanded={isOpen}
+			tabIndex={0}
+			onClick={handleToggle}
+			onKeyDown={(e) => {
+				if (e.key === 'Enter' || e.key === ' ') {
+					e.preventDefault()
+					handleToggle()
+				}
+			}}
+		>
 			<div className="accordion-header">
 				{(startDate || endDate) && (
 					<div className="date">
