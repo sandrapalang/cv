@@ -15,6 +15,15 @@
 		outline-offset: 6px;
 	}
 
+	&:hover {
+		.date h3,
+		.title,
+		.chevron-icon,
+		p {
+			color: var(--color-accent-ink);
+		}
+	}
+
 	&-header {
 		align-items: center;
 		background: none;
