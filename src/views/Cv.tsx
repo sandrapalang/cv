@@ -1,39 +1,50 @@
 import Accordion from '../components/Accordion'
+import { data } from '../data/data'
 
 function Cv() {
+	const { headings, work, education, skills } = data
+
+	const skillsFor = (contextId: string) =>
+		skills
+			.filter((skill) => skill.usedIn.includes(contextId))
+			.map((s) => s.label)
+
 	return (
 		<>
 			<div className="cv-container">
 				<div className="cv-title">
-					<h2>arbete</h2>
+					<h2>{headings.work}</h2>
 				</div>
-				<Accordion
-					startDate="VT 2025"
-					title="Frontend-utvecklare Praktik"
-					company="Stendahls"
-					content={[
-						'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
-						'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
-					]}
-					skills={['HTML', 'CSS', 'JavaScript', 'React', 'TypeScript']}
-				/>
+				{work.map((work) => (
+					<Accordion
+						key={work.id}
+						startDate={work.startDate}
+						endDate={work.endDate}
+						title={work.title}
+						atLabel={headings.at}
+						company={work.company?.name}
+						content={work.content}
+						skills={skillsFor(work.id)}
+					/>
+				))}
 			</div>
 
 			<div className="cv-container">
 				<div className="cv-title">
-					<h2>utbildning</h2>
+					<h2>{headings.education}</h2>
 				</div>
-				<Accordion
-					startDate="2023"
-					endDate="2025"
-					title="Frontend-utvecklare"
-					school="IT-Högskolan"
-					content={[
-						'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
-						'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
-					]}
-					skills={['HTML', 'CSS', 'JavaScript', 'React', 'TypeScript']}
-				/>
+				{education.map((edu) => (
+					<Accordion
+						key={edu.id}
+						startDate={edu.startDate}
+						endDate={edu.endDate}
+						title={edu.title}
+						atLabel={headings.at}
+						company={edu.school?.name}
+						content={edu.content}
+						skills={skillsFor(edu.id)}
+					/>
+				))}
 			</div>
 		</>
 	)
