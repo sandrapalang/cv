@@ -45,7 +45,7 @@ export interface WorkItem {
 	endDate?: string
 	title: string
 	isInternship?: boolean
-	internship: string
+	internship?: string
 	company?: LinkInfo
 	content?: string[]
 	skills?: string[]
