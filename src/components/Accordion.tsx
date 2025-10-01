@@ -6,6 +6,7 @@ interface AccordionProps {
 	endDate?: string
 	title: string
 	company?: string
+	atLabel: string
 	school?: string
 	content?: string[]
 	skills?: string[]
@@ -15,6 +16,7 @@ const Accordion: React.FC<AccordionProps> = ({
 	startDate,
 	endDate,
 	title,
+	atLabel,
 	company,
 	school,
 	content,
@@ -79,7 +81,7 @@ const Accordion: React.FC<AccordionProps> = ({
 				<div className="accordion-content" ref={contentRef}>
 					<div className="header">
 						<p>
-							på {company} {school}
+							{atLabel} {company} {school}
 						</p>
 						<div className="content">
 							{content?.map((paragraph, index) => (
