@@ -6,7 +6,7 @@ export const data: CvData = {
 			id: 'FED',
 			startDate: '2023',
 			endDate: '2025',
-			title: 'Frontend-Utvecklare',
+			title: 'Frontend-Utveckling',
 			school: {
 				name: 'IT-högskolan',
 				linkUrl:
