@@ -13,7 +13,6 @@ export const data: CvData = {
 					'https://www.iths.se/utbildningar/frontend/?_gl=1*1qa4iwp*_up*MQ..&gclid=CjwKCAjw2dG1BhB4EiwA998cqD-7SgzDc-Ke2CNO6DjM6ikmwTAEkw-RP5MlmETYu_DpZj5lW5hhVRoCi2cQAvD_BwE',
 				linkText: 'iths.se',
 			},
-			skills: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'Vue'],
 			content: [
 				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
 				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
@@ -29,7 +28,6 @@ export const data: CvData = {
 				linkUrl: 'https://hermods.se/utbildningar/webbutveckling-1/',
 				linkText: 'hermods.se',
 			},
-			skills: ['HTML', 'CSS', 'Php', 'WordPress'],
 			content: [
 				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
 				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
@@ -45,7 +43,6 @@ export const data: CvData = {
 				linkUrl: 'https://hermods.se/utbildningar/programmering-1/',
 				linkText: 'hermods.se',
 			},
-			skills: ['C#', 'Python', 'Visual Studio', 'Git'],
 			content: [
 				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
 				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
@@ -268,7 +265,6 @@ export const data: CvData = {
 				linkUrl: 'https://www.stendahls.se',
 				linkText: 'stendahls.se',
 			},
-			skills: ['JavaScript', 'React', 'TypeScript', 'HTML', 'CSS'],
 			content: [
 				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
 				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
@@ -284,7 +280,6 @@ export const data: CvData = {
 				linkUrl: 'https://www.stendahls.se',
 				linkText: 'stendahls.se',
 			},
-			skills: ['JavaScript', 'Vue', 'TypeScript', 'HTML', 'CSS'],
 			content: [
 				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
 				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
