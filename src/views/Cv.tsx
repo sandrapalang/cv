@@ -21,6 +21,8 @@ function Cv() {
 						startDate={work.startDate}
 						endDate={work.endDate}
 						title={work.title}
+						isInternship={work.isInternship}
+						internship={work.internship}
 						atLabel={headings.at}
 						company={work.company?.name}
 						content={work.content}
