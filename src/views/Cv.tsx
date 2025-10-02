@@ -44,7 +44,7 @@ function Cv() {
 						endDate={edu.endDate}
 						title={edu.title}
 						atLabel={headings.at}
-						company={edu.school?.name}
+						school={edu.school?.name}
 						inLabel={headings.in}
 						location={edu.school?.location}
 						content={edu.content}
