@@ -10,6 +10,8 @@ interface AccordionProps {
 	internship?: string
 	atLabel: string
 	school?: string
+	inLabel?: string
+	location?: string
 	content?: string[]
 	skills?: string[]
 }
@@ -23,6 +25,8 @@ const Accordion: React.FC<AccordionProps> = ({
 	atLabel,
 	company,
 	school,
+	inLabel,
+	location,
 	content,
 	skills,
 }) => {
@@ -89,6 +93,7 @@ const Accordion: React.FC<AccordionProps> = ({
 					<div className="header">
 						<p>
 							{atLabel} {company} {school}
+							{inLabel && location ? ` ${inLabel} ${location}` : ''}
 						</p>
 						<div className="content">
 							{content?.map((paragraph, index) => (
