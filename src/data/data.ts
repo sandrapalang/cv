@@ -259,7 +259,9 @@ export const data: CvData = {
 			id: 'LIA2',
 			startDate: 'VT 2025',
 			endDate: '',
-			title: 'Frontend-utvecklare praktik',
+			title: 'Frontend-utvecklare',
+			isInternship: true,
+			internship: 'praktik',
 			company: {
 				name: 'Stendahls',
 				linkUrl: 'https://www.stendahls.se',
@@ -274,7 +276,9 @@ export const data: CvData = {
 			id: 'LIA1',
 			startDate: 'HT 2024',
 			endDate: '',
-			title: 'Frontend-utvecklare praktik',
+			title: 'Frontend-utvecklare',
+			isInternship: true,
+			internship: 'praktik',
 			company: {
 				name: 'Stendahls',
 				linkUrl: 'https://www.stendahls.se',
