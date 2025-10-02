@@ -5,10 +5,10 @@ interface AccordionProps {
 	startDate: string
 	endDate?: string
 	title: string
-	company?: string
 	isInternship?: boolean
 	internship?: string
 	atLabel: string
+	company?: string
 	school?: string
 	inLabel?: string
 	location?: string
