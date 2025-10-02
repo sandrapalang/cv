@@ -6,6 +6,8 @@ interface AccordionProps {
 	endDate?: string
 	title: string
 	company?: string
+	isInternship?: boolean
+	internship?: string
 	atLabel: string
 	school?: string
 	content?: string[]
@@ -16,6 +18,8 @@ const Accordion: React.FC<AccordionProps> = ({
 	startDate,
 	endDate,
 	title,
+	isInternship = false,
+	internship,
 	atLabel,
 	company,
 	school,
@@ -68,7 +72,10 @@ const Accordion: React.FC<AccordionProps> = ({
 						</h3>
 					</div>
 				)}
-				<h3 className="title">{title}</h3>
+				<h3 className="title">
+					{title}
+					{isInternship && internship ? ` (${internship})` : ''}
+				</h3>
 				<span
 					className="chevron-icon"
 					style={{ transform: `rotate(${rotation}deg)` }}
