@@ -92,8 +92,15 @@ const Accordion: React.FC<AccordionProps> = ({
 				<div className="accordion-content" ref={contentRef}>
 					<div className="header">
 						<p>
-							{atLabel} {company} {school}
-							{inLabel && location ? ` ${inLabel} ${location}` : ''}
+							{(company || school) && location
+								? `${atLabel} ${company || school} ${inLabel} ${location}`
+								: ''}
+
+							{(company || school) && !location
+								? `${atLabel} ${company || school}`
+								: ''}
+
+							{!(company || school) && location ? `${inLabel} ${location}` : ''}
 						</p>
 						<div className="content">
 							{content?.map((paragraph, index) => (
