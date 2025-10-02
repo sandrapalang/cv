@@ -5,9 +5,13 @@ interface AccordionProps {
 	startDate: string
 	endDate?: string
 	title: string
-	company?: string
+	isInternship?: boolean
+	internship?: string
 	atLabel: string
+	company?: string
 	school?: string
+	inLabel?: string
+	location?: string
 	content?: string[]
 	skills?: string[]
 }
@@ -16,9 +20,13 @@ const Accordion: React.FC<AccordionProps> = ({
 	startDate,
 	endDate,
 	title,
+	isInternship = false,
+	internship,
 	atLabel,
 	company,
 	school,
+	inLabel,
+	location,
 	content,
 	skills,
 }) => {
@@ -68,7 +76,10 @@ const Accordion: React.FC<AccordionProps> = ({
 						</h3>
 					</div>
 				)}
-				<h3 className="title">{title}</h3>
+				<h3 className="title">
+					{title}
+					{isInternship && internship ? ` (${internship})` : ''}
+				</h3>
 				<span
 					className="chevron-icon"
 					style={{ transform: `rotate(${rotation}deg)` }}
@@ -81,7 +92,15 @@ const Accordion: React.FC<AccordionProps> = ({
 				<div className="accordion-content" ref={contentRef}>
 					<div className="header">
 						<p>
-							{atLabel} {company} {school}
+							{(company || school) && location
+								? `${atLabel} ${company || school} ${inLabel} ${location}`
+								: ''}
+
+							{(company || school) && !location
+								? `${atLabel} ${company || school}`
+								: ''}
+
+							{!(company || school) && location ? `${inLabel} ${location}` : ''}
 						</p>
 						<div className="content">
 							{content?.map((paragraph, index) => (

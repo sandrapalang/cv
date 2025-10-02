@@ -22,11 +22,13 @@ export interface EducationItem {
 export interface Headings {
 	at: string
 	education: string
+	in: string
 	work: string
 }
 
 export interface LinkInfo {
 	name: string
+	location: string
 	linkText: string
 	linkUrl: string
 }
@@ -42,6 +44,8 @@ export interface WorkItem {
 	startDate: string
 	endDate?: string
 	title: string
+	isInternship?: boolean
+	internship?: string
 	company?: LinkInfo
 	content?: string[]
 	skills?: string[]
