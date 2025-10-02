@@ -25,6 +25,8 @@ function Cv() {
 						internship={work.internship}
 						atLabel={headings.at}
 						company={work.company?.name}
+						inLabel={headings.in}
+						location={work.company?.location}
 						content={work.content}
 						skills={skillsFor(work.id)}
 					/>
@@ -43,6 +45,8 @@ function Cv() {
 						title={edu.title}
 						atLabel={headings.at}
 						company={edu.school?.name}
+						inLabel={headings.in}
+						location={edu.school?.location}
 						content={edu.content}
 						skills={skillsFor(edu.id)}
 					/>
