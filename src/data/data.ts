@@ -9,6 +9,7 @@ export const data: CvData = {
 			title: 'Frontend-Utveckling',
 			school: {
 				name: 'IT-högskolan',
+				location: 'Göteborg',
 				linkUrl:
 					'https://www.iths.se/utbildningar/frontend/?_gl=1*1qa4iwp*_up*MQ..&gclid=CjwKCAjw2dG1BhB4EiwA998cqD-7SgzDc-Ke2CNO6DjM6ikmwTAEkw-RP5MlmETYu_DpZj5lW5hhVRoCi2cQAvD_BwE',
 				linkText: 'iths.se',
@@ -25,6 +26,7 @@ export const data: CvData = {
 			title: 'Webbutveckling',
 			school: {
 				name: 'Hermods',
+				location: 'Göteborg',
 				linkUrl: 'https://hermods.se/utbildningar/webbutveckling-1/',
 				linkText: 'hermods.se',
 			},
@@ -40,6 +42,7 @@ export const data: CvData = {
 			title: 'Programmering',
 			school: {
 				name: 'Hermods',
+				location: 'Göteborg',
 				linkUrl: 'https://hermods.se/utbildningar/programmering-1/',
 				linkText: 'hermods.se',
 			},
@@ -52,6 +55,7 @@ export const data: CvData = {
 	headings: {
 		at: 'på',
 		education: 'Utbildning',
+		in: 'i',
 		work: 'Arbete',
 	},
 
@@ -264,6 +268,7 @@ export const data: CvData = {
 			internship: 'praktik',
 			company: {
 				name: 'Stendahls',
+				location: 'Göteborg',
 				linkUrl: 'https://www.stendahls.se',
 				linkText: 'stendahls.se',
 			},
@@ -281,6 +286,7 @@ export const data: CvData = {
 			internship: 'praktik',
 			company: {
 				name: 'Stendahls',
+				location: 'Göteborg',
 				linkUrl: 'https://www.stendahls.se',
 				linkText: 'stendahls.se',
 			},
