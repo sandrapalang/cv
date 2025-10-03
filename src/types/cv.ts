@@ -1,4 +1,5 @@
 export interface CvData {
+	cv: CvItem[]
 	education: EducationItem[]
 	headings: Headings
 	skills: Skill[]
@@ -23,6 +24,7 @@ export interface Headings {
 	at: string
 	education: string
 	in: string
+	skills: string
 	work: string
 }
 
