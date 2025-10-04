@@ -1,4 +1,5 @@
 import Accordion from '../components/Accordion'
+import Chip from '../components/Chip'
 import { data } from '../data/data'
 
 function Cv() {
@@ -8,6 +9,8 @@ function Cv() {
 		skills
 			.filter((skill) => skill.usedIn.includes(contextId))
 			.map((s) => s.label)
+
+	const selectedSkills = skills.filter((skill) => skill.usedIn.includes('CV'))
 
 	return (
 		<>
@@ -51,6 +54,17 @@ function Cv() {
 						skills={skillsFor(edu.id)}
 					/>
 				))}
+			</div>
+
+			<div className="cv-container">
+				<div className="cv-title">
+					<h2>{headings.skills}</h2>
+				</div>
+				<div className="skills">
+					{selectedSkills.map((skill) => (
+						<Chip key={skill.slug} label={skill.label} clickable />
+					))}
+				</div>
 			</div>
 		</>
 	)
