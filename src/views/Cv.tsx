@@ -1,9 +1,16 @@
+import { useState } from 'react'
 import Accordion from '../components/Accordion'
 import Chip from '../components/Chip'
 import { data } from '../data/data'
 
 function Cv() {
 	const { headings, work, education, skills } = data
+
+	const [selectedSkill, setSelectedSkill] = useState<string | null>(null)
+
+	const handleSkillClick = (slug: string) => {
+		setSelectedSkill((prev) => (prev === slug ? null : slug))
+	}
 
 	const skillsFor = (contextId: string) =>
 		skills
@@ -62,7 +69,13 @@ function Cv() {
 				</div>
 				<div className="skills">
 					{selectedSkills.map((skill) => (
-						<Chip key={skill.slug} label={skill.label} clickable />
+						<Chip
+							key={skill.slug}
+							label={skill.label}
+							clickable
+							selected={selectedSkill === skill.slug}
+							onClick={() => handleSkillClick(skill.slug)}
+						/>
 					))}
 				</div>
 			</div>
