@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Accordion from '../components/Accordion'
 import Chip from '../components/Chip'
 import { data } from '../data/data'
@@ -11,6 +11,21 @@ function Cv() {
 	const handleSkillClick = (slug: string) => {
 		setSelectedSkill((prev) => (prev === slug ? null : slug))
 	}
+
+	useEffect(() => {
+		const stored = localStorage.getItem('selectedSkill')
+		if (stored) {
+			setSelectedSkill(stored)
+		}
+	}, [])
+
+	useEffect(() => {
+		if (selectedSkill) {
+			localStorage.setItem('selectedSkill', selectedSkill)
+		} else {
+			localStorage.removeItem('selectedSkill')
+		}
+	}, [selectedSkill])
 
 	const skillsFor = (contextId: string) =>
 		skills
