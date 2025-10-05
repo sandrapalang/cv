@@ -81,19 +81,12 @@
 				width: 100%;
 			}
 
-			.skills {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 4px;
-				width: 100%;
-
-				.skill {
-					border: 0.5px solid var(--color-text-primary-alpha);
-					border-radius: 16px;
-					font-size: 12px;
-					line-height: 1.5;
-					padding: 2px 8px;
-				}
+			.skill {
+				border: 0.5px solid var(--color-text-secondary-alpha);
+				border-radius: 16px;
+				font-size: 12px;
+				line-height: 1.5;
+				padding: 2px 8px;
 			}
 		}
 	}
