@@ -34,7 +34,22 @@
 	}
 
 	&-title {
-		border-bottom: 1px solid var(--color-text-primary-alpha);
 		padding-bottom: 16px;
+	}
+
+	&-title.bb {
+		border-bottom: 1px solid var(--color-text-primary-alpha);
+	}
+
+	.skills {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 4px;
+		margin: 8px 0 0;
+		width: 100%;
+	}
+
+	&-container > .skills {
+		gap: 8px;
 	}
 }

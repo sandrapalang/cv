@@ -1,6 +1,7 @@
 import type { CvData } from '../types/cv'
 
 export const data: CvData = {
+	cv: [{ id: 'CV' }],
 	education: [
 		{
 			id: 'FED',
@@ -56,6 +57,7 @@ export const data: CvData = {
 		at: 'på',
 		education: 'Utbildning',
 		in: 'i',
+		skills: 'Kompetenser',
 		work: 'Arbete',
 	},
 
@@ -63,37 +65,37 @@ export const data: CvData = {
 		{
 			label: 'HTML',
 			slug: 'html',
-			usedIn: ['WEB1', 'FED', 'LIA1', 'LIA2'],
+			usedIn: ['WEB1', 'FED', 'LIA1', 'LIA2', 'CV'],
 		},
 		{
 			label: 'CSS',
 			slug: 'css',
-			usedIn: ['WEB1', 'FED', 'LIA1', 'LIA2'],
+			usedIn: ['WEB1', 'FED', 'LIA1', 'LIA2', 'CV'],
 		},
 		{
 			label: 'SASS',
 			slug: 'sass',
-			usedIn: ['FED', 'LIA1', 'LIA2', 'WEB2'],
+			usedIn: ['FED', 'LIA1', 'LIA2', 'CV'],
 		},
 		{
 			label: 'JavaScript',
 			slug: 'javascript',
-			usedIn: ['WEB1', 'FED', 'LIA1', 'LIA2'],
+			usedIn: ['WEB1', 'FED', 'LIA1', 'LIA2', 'CV'],
 		},
 		{
 			label: 'TypeScript',
 			slug: 'typescript',
-			usedIn: ['WEB1', 'FED', 'LIA1', 'LIA2'],
+			usedIn: ['WEB1', 'FED', 'LIA1', 'LIA2', 'CV'],
 		},
 		{
 			label: 'PHP',
 			slug: 'php',
-			usedIn: ['WEB1', 'FED'],
+			usedIn: ['WEB1', 'FED', 'CV'],
 		},
 		{
 			label: 'SQL',
 			slug: 'sql',
-			usedIn: ['FED'],
+			usedIn: ['FED', 'CV'],
 		},
 		{
 			label: 'C#',
@@ -103,17 +105,17 @@ export const data: CvData = {
 		{
 			label: 'JSON',
 			slug: 'json',
-			usedIn: ['FED', 'LIA1', 'LIA2'],
+			usedIn: ['FED', 'LIA1', 'LIA2', 'CV'],
 		},
 		{
 			label: 'React',
 			slug: 'react',
-			usedIn: ['FED', 'LIA2'],
+			usedIn: ['FED', 'LIA2', 'CV'],
 		},
 		{
 			label: 'Vue',
 			slug: 'vue',
-			usedIn: ['FED', 'LIA1'],
+			usedIn: ['FED', 'LIA1', 'CV'],
 		},
 		{
 			label: 'Express',
@@ -123,12 +125,12 @@ export const data: CvData = {
 		{
 			label: 'Next',
 			slug: 'next',
-			usedIn: [],
+			usedIn: ['FED'],
 		},
 		{
 			label: 'Node',
 			slug: 'node',
-			usedIn: ['FED', 'LIA1', 'LIA2'],
+			usedIn: ['FED', 'LIA1', 'LIA2', 'CV'],
 		},
 		{
 			label: 'Vite',
@@ -140,7 +142,7 @@ export const data: CvData = {
 		{
 			label: 'GraphQL',
 			slug: 'graphql',
-			usedIn: ['FED', 'LIA1'],
+			usedIn: ['FED', 'LIA1', 'CV'],
 		},
 		{
 			label: 'SQLite',
@@ -150,37 +152,37 @@ export const data: CvData = {
 		{
 			label: 'PostgreSQL',
 			slug: 'postgresql',
-			usedIn: ['FED'],
+			usedIn: ['FED', 'CV'],
 		},
 		{
 			label: 'ESLint',
 			slug: 'eslint',
-			usedIn: ['FED', 'LIA1', 'LIA2'],
+			usedIn: ['FED', 'LIA1', 'LIA2', 'CV'],
 		},
 		{
 			label: 'Prettier',
 			slug: 'prettier',
-			usedIn: ['FED', 'LIA2'],
+			usedIn: ['FED', 'LIA2', 'CV'],
 		},
 		{
 			label: 'SonarQube',
 			slug: 'sonarqube',
-			usedIn: ['LIA2'],
+			usedIn: ['LIA2', 'CV'],
 		},
 		{
 			label: 'Jest',
 			slug: 'jest',
-			usedIn: ['LIA2'],
+			usedIn: ['LIA2', 'CV'],
 		},
 		{
 			label: 'Git',
 			slug: 'git',
-			usedIn: ['WEB1', 'PRR1', 'FED', 'LIA1', 'LIA2'],
+			usedIn: ['WEB1', 'PRR1', 'FED', 'LIA1', 'LIA2', 'CV'],
 		},
 		{
 			label: 'GitHub',
 			slug: 'github',
-			usedIn: ['FED'],
+			usedIn: ['FED', 'CV'],
 		},
 		{
 			label: 'Gitea',
@@ -200,22 +202,22 @@ export const data: CvData = {
 		{
 			slug: 'visual-studio-code',
 			label: 'Visual Studio Code',
-			usedIn: ['WEB1', 'FED', 'LIA2', 'WEB2'],
+			usedIn: ['WEB1', 'FED', 'LIA2'],
 		},
 		{
 			label: 'WordPress',
 			slug: 'wordpress',
-			usedIn: ['FED'],
+			usedIn: ['FED', 'CV'],
 		},
 		{
 			label: 'Contentful',
 			slug: 'contentful',
-			usedIn: ['FED'],
+			usedIn: ['FED', 'CV'],
 		},
 		{
 			label: 'Render',
 			slug: 'render',
-			usedIn: ['FED'],
+			usedIn: ['FED', 'CV'],
 		},
 		{
 			label: 'Vercel',
@@ -245,17 +247,17 @@ export const data: CvData = {
 		{
 			label: 'Figma',
 			slug: 'figma',
-			usedIn: ['FED', 'LIA1', 'LIA2'],
+			usedIn: ['FED', 'LIA1', 'LIA2', 'CV'],
 		},
 		{
 			label: 'Scrum',
 			slug: 'scrum',
-			usedIn: ['FED', 'LIA1', 'LIA2'],
+			usedIn: ['FED', 'LIA1', 'LIA2', 'CV'],
 		},
 		{
 			label: 'Kanban',
 			slug: 'kanban',
-			usedIn: ['FED', 'LIA1', 'LIA2'],
+			usedIn: ['FED', 'LIA1', 'LIA2', 'CV'],
 		},
 	],
 	work: [

@@ -81,20 +81,57 @@
 				width: 100%;
 			}
 
-			.skills {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 4px;
-				width: 100%;
-
-				.skill {
-					border: 0.5px solid var(--color-text-primary-alpha);
-					border-radius: 16px;
-					font-size: 12px;
-					line-height: 1.5;
-					padding: 2px 8px;
-				}
+			.skill {
+				border: 0.5px solid var(--color-text-secondary-alpha);
+				border-radius: 16px;
+				font-size: 12px;
+				padding: 4px 8px;
 			}
+		}
+	}
+}
+
+.chip {
+	display: inline-flex;
+	align-items: center;
+	padding: 8px 12px;
+	border-radius: 16px;
+	background-color: var(--color-bg-secondary-alpha);
+	color: var(--color-text-primary-alpha);
+	font-size: 14px;
+	cursor: default;
+	user-select: none;
+	transition:
+		background-color 0.3s,
+		color 0.3s;
+	border: none;
+	outline: none;
+
+	&.clickable {
+		cursor: pointer;
+
+		&:hover {
+			background-color: var(--color-bg-primary-alpha);
+		}
+	}
+
+	&.disabled {
+		background-color: var(--color-bg-primary-alpha);
+		color: var(--color-bg-quaternary-alpha);
+		cursor: not-allowed;
+	}
+
+	&:focus-visible {
+		outline: 2px solid var(--color-accent-ink);
+		outline-offset: 3px;
+	}
+
+	&.selected {
+		background-color: var(--color-accent-ink);
+		color: var(--color-accent-whitesmoke);
+
+		&:hover {
+			background-color: var(--color-accent-ink);
 		}
 	}
 }
