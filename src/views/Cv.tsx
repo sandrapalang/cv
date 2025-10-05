@@ -37,7 +37,7 @@ function Cv() {
 	return (
 		<>
 			<div className="cv-container">
-				<div className="cv-title">
+				<div className="cv-title bb">
 					<h2>{headings.work}</h2>
 				</div>
 				{work.map((work) => (
@@ -59,7 +59,7 @@ function Cv() {
 			</div>
 
 			<div className="cv-container">
-				<div className="cv-title">
+				<div className="cv-title bb">
 					<h2>{headings.education}</h2>
 				</div>
 				{education.map((edu) => (
