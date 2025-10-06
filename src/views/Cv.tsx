@@ -34,6 +34,10 @@ function Cv() {
 
 	const selectedSkills = skills.filter((skill) => skill.usedIn.includes('CV'))
 
+	const highlightedIds = selectedSkill
+		? (skills.find((s) => s.slug === selectedSkill)?.usedIn ?? [])
+		: []
+
 	return (
 		<>
 			<div className="cv-container">
@@ -54,6 +58,7 @@ function Cv() {
 						location={work.company?.location}
 						content={work.content}
 						skills={skillsFor(work.id)}
+						isHighlighted={highlightedIds.includes(work.id)}
 					/>
 				))}
 			</div>
@@ -74,6 +79,7 @@ function Cv() {
 						location={edu.school?.location}
 						content={edu.content}
 						skills={skillsFor(edu.id)}
+						isHighlighted={highlightedIds.includes(edu.id)}
 					/>
 				))}
 			</div>
