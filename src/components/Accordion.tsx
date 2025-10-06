@@ -14,6 +14,7 @@ interface AccordionProps {
 	location?: string
 	content?: string[]
 	skills?: string[]
+	isHighlighted?: boolean
 }
 
 const Accordion: React.FC<AccordionProps> = ({
@@ -29,6 +30,7 @@ const Accordion: React.FC<AccordionProps> = ({
 	location,
 	content,
 	skills,
+	isHighlighted,
 }) => {
 	const contentRef = useRef<HTMLDivElement>(null)
 
@@ -52,7 +54,7 @@ const Accordion: React.FC<AccordionProps> = ({
 
 	return (
 		<div
-			className={`accordion${isOpen ? ' open' : ''}`}
+			className={`accordion${isOpen ? ' open' : ''}${isHighlighted ? ' highlighted' : ''}`}
 			role="button"
 			aria-expanded={isOpen}
 			tabIndex={0}
@@ -87,6 +89,13 @@ const Accordion: React.FC<AccordionProps> = ({
 				>
 					<ChevronDown />
 				</span>
+				{isHighlighted && (
+					<span
+						className="highlight-dot"
+						aria-hidden="true"
+						role="presentation"
+					/>
+				)}
 			</div>
 			{isOpen && (
 				<div className="accordion-content" ref={contentRef}>
