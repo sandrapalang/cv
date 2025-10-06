@@ -54,15 +54,18 @@
 		}
 	}
 
-	&.highlighted .accordion-header::after {
-		content: '';
-		width: 10px;
-		height: 10px;
-		background-color: var(--color-accent-ink);
+	&.highlighted .accordion-header {
+		position: relative;
+	}
+
+	& .highlight-dot {
+		background: var(--color-accent-ink);
 		border-radius: 50%;
 		position: absolute;
-		top: 5px;
+		height: 10px;
 		left: 102px;
+		top: 4px;
+		width: 10px;
 	}
 
 	&-content {

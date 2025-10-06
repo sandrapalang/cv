@@ -89,6 +89,13 @@ const Accordion: React.FC<AccordionProps> = ({
 				>
 					<ChevronDown />
 				</span>
+				{isHighlighted && (
+					<span
+						className="highlight-dot"
+						aria-hidden="true"
+						role="presentation"
+					/>
+				)}
 			</div>
 			{isOpen && (
 				<div className="accordion-content" ref={contentRef}>
