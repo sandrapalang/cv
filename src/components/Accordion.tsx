@@ -89,39 +89,49 @@ const Accordion: React.FC<AccordionProps> = ({
 				>
 					<ChevronDown />
 				</span>
-				{isHighlighted && (
-					<span
-						className="highlight-dot"
-						aria-hidden="true"
-						role="presentation"
-					/>
-				)}
+				<span
+					className="highlight-anchor"
+					aria-hidden="true"
+					role="presentation"
+				>
+					{isHighlighted && (
+						<span
+							className="highlight-dot"
+							aria-hidden="true"
+							role="presentation"
+						/>
+					)}
+				</span>
 			</div>
 			{isOpen && (
 				<div className="accordion-content" ref={contentRef}>
-					<div className="header">
-						<p>
-							{(company || school) && location
-								? `${atLabel} ${company || school} ${inLabel} ${location}`
-								: ''}
+					<div className="accordion-panel">
+						<div className="header">
+							<p>
+								{(company || school) && location
+									? `${atLabel} ${company || school} ${inLabel} ${location}`
+									: ''}
 
-							{(company || school) && !location
-								? `${atLabel} ${company || school}`
-								: ''}
+								{(company || school) && !location
+									? `${atLabel} ${company || school}`
+									: ''}
 
-							{!(company || school) && location ? `${inLabel} ${location}` : ''}
-						</p>
-						<div className="content">
-							{content?.map((paragraph, index) => (
-								<p key={index}>{paragraph}</p>
-							))}
-						</div>
-						<div className="skills">
-							{skills?.map((skill, index) => (
-								<p key={index} className="skill">
-									{skill}
-								</p>
-							))}
+								{!(company || school) && location
+									? `${inLabel} ${location}`
+									: ''}
+							</p>
+							<div className="content">
+								{content?.map((paragraph, index) => (
+									<p key={index}>{paragraph}</p>
+								))}
+							</div>
+							<div className="skills">
+								{skills?.map((skill, index) => (
+									<p key={index} className="skill">
+										{skill}
+									</p>
+								))}
+							</div>
 						</div>
 					</div>
 				</div>
