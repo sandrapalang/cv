@@ -120,18 +120,18 @@ const Accordion: React.FC<AccordionProps> = ({
 									? `${inLabel} ${location}`
 									: ''}
 							</p>
-							<div className="content">
-								{content?.map((paragraph, index) => (
-									<p key={index}>{paragraph}</p>
-								))}
-							</div>
-							<div className="skills">
-								{skills?.map((skill, index) => (
-									<p key={index} className="skill">
-										{skill}
-									</p>
-								))}
-							</div>
+						</div>
+						<div className="content">
+							{content?.map((paragraph, index) => (
+								<p key={index}>{paragraph}</p>
+							))}
+						</div>
+						<div className="skills">
+							{skills?.map((skill, index) => (
+								<p key={index} className="skill">
+									{skill}
+								</p>
+							))}
 						</div>
 					</div>
 				</div>
