@@ -21,4 +21,8 @@
 	--color-text-secondary-alpha: rgba(29, 29, 29, 0.59);
 	--color-text-tertiary-alpha: rgba(29, 29, 29, 0.49);
 	--color-text-quaternary-alpha: rgba(29, 29, 29, 0.29);
+
+	--grid-columns: 12;
+	--grid-gap-md: 16px;
+	--grid-gap: var(--grid-gap-md);
 }
