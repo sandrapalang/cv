@@ -8,8 +8,8 @@
 	grid-auto-rows: min-content;
 	grid-template-columns: minmax(105px, auto) 1fr auto;
 	overflow: hidden;
-	transition: height 0.4s ease-in-out;
-	padding: 0 12px;
+	padding: 0 var(--space-xs);
+	transition: height var(--motion-duration) var(--motion-ease);
 
 	&:focus-visible {
 		outline: 2px solid var(--color-accent-ink);
@@ -31,7 +31,7 @@
 		grid-template-columns: subgrid;
 		column-gap: var(--grid-gap);
 		align-items: center;
-		padding: 12px 0;
+		padding: var(--space-xs) 0;
 		position: relative;
 		text-transform: uppercase;
 
@@ -49,7 +49,7 @@
 			height: 16px;
 			justify-self: end;
 			transform-origin: center;
-			transition: transform 0.4s ease-in-out;
+			transition: transform var(--motion-duration) var(--motion-ease);
 			width: 16px;
 		}
 	}
@@ -99,9 +99,9 @@
 	.content {
 		display: flex;
 		flex-direction: column;
-		gap: 24px;
+		gap: var(--space-md);
 		grid-column: 2;
-		margin: 24px 0;
+		margin: var(--space-md) 0;
 	}
 
 	.skills {
@@ -109,13 +109,13 @@
 		flex-wrap: wrap;
 		gap: 4px;
 		grid-column: 2;
-		padding: 0 0 16px;
+		padding: 0 0 var(--space-sm);
 
 		.skill {
 			border: 0.5px solid var(--color-text-secondary-alpha);
 			border-radius: 16px;
 			font-size: 12px;
-			padding: 4px 8px;
+			padding: 4px var(--space-xxs);
 		}
 	}
 
@@ -168,7 +168,7 @@
 .chip {
 	display: inline-flex;
 	align-items: center;
-	padding: 8px 12px;
+	padding: var(--space-xxs) var(--space-xs);
 	border-radius: 16px;
 	background-color: var(--color-bg-secondary-alpha);
 	color: var(--color-text-primary-alpha);
