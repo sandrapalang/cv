@@ -118,6 +118,51 @@
 			padding: 4px 8px;
 		}
 	}
+
+	@media (min-width: 992px) {
+		grid-template-columns: minmax(175px, auto) 1fr auto;
+		padding: 0;
+
+		&-header {
+			grid-template-columns: subgrid;
+		}
+
+		.date {
+			grid-column: 1;
+		}
+
+		.title {
+			grid-column: 2;
+			max-width: 680px;
+		}
+
+		.chevron-icon {
+			grid-column: 3;
+		}
+
+		&.highlighted .highlight-anchor {
+			grid-column: 2;
+		}
+
+		.highlight-dot {
+			left: -56px;
+		}
+
+		&-content {
+			grid-template-columns: subgrid;
+		}
+
+		&-panel {
+			grid-template-columns: minmax(175px, auto) 1fr;
+		}
+
+		.header > p,
+		.content,
+		.skills {
+			grid-column: 2;
+			max-width: 680px;
+		}
+	}
 }
 
 .chip {

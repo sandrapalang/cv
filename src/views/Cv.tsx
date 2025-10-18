@@ -41,6 +41,7 @@ function Cv() {
 	return (
 		<>
 			<div className="cv-container">
+				<div className="line" aria-hidden="true" />
 				<div className="cv-title bb">
 					<h2>{headings.work}</h2>
 				</div>
@@ -66,6 +67,7 @@ function Cv() {
 			</div>
 
 			<div className="cv-container">
+				<div className="line" aria-hidden="true" />
 				<div className="cv-title bb">
 					<h2>{headings.education}</h2>
 				</div>
@@ -89,7 +91,8 @@ function Cv() {
 			</div>
 
 			<div className="cv-container">
-				<div className="cv-title">
+				<div className="line" aria-hidden="true" />
+				<div className="cv-title bb">
 					<h2>{headings.skills}</h2>
 				</div>
 				<div className="cv-content">

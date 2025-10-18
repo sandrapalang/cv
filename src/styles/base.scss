@@ -37,3 +37,14 @@ h3 {
 p {
 	font-size: 0.875rem;
 }
+
+@media (width >= 992px) {
+	h3 {
+		font-size: 0.9rem;
+		font-weight: 550;
+	}
+
+	p {
+		font-size: 0.9rem;
+	}
+}
