@@ -39,77 +39,81 @@ function Cv() {
 		: []
 
 	return (
-		<>
-			<div className="cv-container">
-				<div className="line" aria-hidden="true" />
-				<div className="cv-title bb">
-					<h2>{headings.work}</h2>
-				</div>
-				<div className="cv-content">
-					{work.map((work) => (
-						<Accordion
-							key={work.id}
-							startDate={work.startDate}
-							endDate={work.endDate}
-							title={work.title}
-							isInternship={work.isInternship}
-							internship={work.internship}
-							atLabel={headings.at}
-							company={work.company?.name}
-							inLabel={headings.in}
-							location={work.company?.location}
-							content={work.content}
-							skills={skillsFor(work.id)}
-							isHighlighted={highlightedIds.includes(work.id)}
-						/>
-					))}
-				</div>
-			</div>
+		<div className="cv">
+			<main>
+				<div className="sections">
+					<div className="section">
+						<div className="section-divider" aria-hidden="true" />
+						<div className="section-title bb">
+							<h2>{headings.work}</h2>
+						</div>
+						<div className="section-content">
+							{work.map((work) => (
+								<Accordion
+									key={work.id}
+									startDate={work.startDate}
+									endDate={work.endDate}
+									title={work.title}
+									isInternship={work.isInternship}
+									internship={work.internship}
+									atLabel={headings.at}
+									company={work.company?.name}
+									inLabel={headings.in}
+									location={work.company?.location}
+									content={work.content}
+									skills={skillsFor(work.id)}
+									isHighlighted={highlightedIds.includes(work.id)}
+								/>
+							))}
+						</div>
+					</div>
 
-			<div className="cv-container">
-				<div className="line" aria-hidden="true" />
-				<div className="cv-title bb">
-					<h2>{headings.education}</h2>
-				</div>
-				<div className="cv-content">
-					{education.map((edu) => (
-						<Accordion
-							key={edu.id}
-							startDate={edu.startDate}
-							endDate={edu.endDate}
-							title={edu.title}
-							atLabel={headings.at}
-							school={edu.school?.name}
-							inLabel={headings.in}
-							location={edu.school?.location}
-							content={edu.content}
-							skills={skillsFor(edu.id)}
-							isHighlighted={highlightedIds.includes(edu.id)}
-						/>
-					))}
-				</div>
-			</div>
+					<div className="section">
+						<div className="section-divider" aria-hidden="true" />
+						<div className="section-title bb">
+							<h2>{headings.education}</h2>
+						</div>
+						<div className="section-content">
+							{education.map((edu) => (
+								<Accordion
+									key={edu.id}
+									startDate={edu.startDate}
+									endDate={edu.endDate}
+									title={edu.title}
+									atLabel={headings.at}
+									school={edu.school?.name}
+									inLabel={headings.in}
+									location={edu.school?.location}
+									content={edu.content}
+									skills={skillsFor(edu.id)}
+									isHighlighted={highlightedIds.includes(edu.id)}
+								/>
+							))}
+						</div>
+					</div>
 
-			<div className="cv-container">
-				<div className="line" aria-hidden="true" />
-				<div className="cv-title bb">
-					<h2>{headings.skills}</h2>
-				</div>
-				<div className="cv-content">
-					<div className="skills">
-						{selectedSkills.map((skill) => (
-							<Chip
-								key={skill.slug}
-								label={skill.label}
-								clickable
-								selected={selectedSkill === skill.slug}
-								onClick={() => handleSkillClick(skill.slug)}
-							/>
-						))}
+					<div className="section">
+						<div className="section-divider" aria-hidden="true" />
+						<div className="section-title bb">
+							<h2>{headings.skills}</h2>
+						</div>
+						<div className="section-content">
+							<div className="skills">
+								{selectedSkills.map((skill) => (
+									<Chip
+										key={skill.slug}
+										label={skill.label}
+										clickable
+										selected={selectedSkill === skill.slug}
+										onClick={() => handleSkillClick(skill.slug)}
+									/>
+								))}
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
-		</>
+			</main>
+		</div>
 	)
 }
 

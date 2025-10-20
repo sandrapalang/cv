@@ -71,19 +71,19 @@ const Accordion: React.FC<AccordionProps> = ({
 		>
 			<div className="accordion-header">
 				{(startDate || endDate) && (
-					<div className="date">
+					<div className="accordion-date">
 						<h3>
 							{startDate}
 							{endDate ? ` - ${endDate}` : ''}
 						</h3>
 					</div>
 				)}
-				<h3 className="title">
+				<h3 className="accordion-title">
 					{title}
 					{isInternship && internship ? ` (${internship})` : ''}
 				</h3>
 				<span
-					className="chevron-icon"
+					className="accordion-toggle-icon"
 					style={{ transform: `rotate(${rotation}deg)` }}
 					aria-hidden="true"
 				>
@@ -96,7 +96,7 @@ const Accordion: React.FC<AccordionProps> = ({
 				>
 					{isHighlighted && (
 						<span
-							className="highlight-dot"
+							className="highlight-indicator"
 							aria-hidden="true"
 							role="presentation"
 						/>
@@ -106,7 +106,7 @@ const Accordion: React.FC<AccordionProps> = ({
 			{isOpen && (
 				<div className="accordion-content" ref={contentRef}>
 					<div className="accordion-panel">
-						<div className="header">
+						<div className="accordion-meta">
 							<p>
 								{(company || school) && location
 									? `${atLabel} ${company || school} ${inLabel} ${location}`
@@ -121,12 +121,12 @@ const Accordion: React.FC<AccordionProps> = ({
 									: ''}
 							</p>
 						</div>
-						<div className="content">
+						<div className="accordion-description">
 							{content?.map((paragraph, index) => (
 								<p key={index}>{paragraph}</p>
 							))}
 						</div>
-						<div className="skills">
+						<div className="accordion-skills">
 							{skills?.map((skill, index) => (
 								<p key={index} className="skill">
 									{skill}
