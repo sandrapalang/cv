@@ -17,9 +17,9 @@
 	}
 
 	&:hover {
-		.date h3,
-		.title,
-		.chevron-icon,
+		.accordion-date h3,
+		.accordion-title,
+		.accordion-toggle-icon,
 		p {
 			color: var(--color-accent-ink);
 		}
