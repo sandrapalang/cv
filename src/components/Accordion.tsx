@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useState } from 'react'
 import ChevronDown from '../icons/ChevronDown'
 
 interface AccordionProps {
@@ -32,20 +32,8 @@ const Accordion: React.FC<AccordionProps> = ({
 	skills,
 	isHighlighted,
 }) => {
-	const contentRef = useRef<HTMLDivElement>(null)
-
 	const [isOpen, setIsOpen] = useState(false)
-	const [accordionHeight, setAccordionHeight] = useState('40px')
 	const [rotation, setRotation] = useState(0)
-
-	useEffect(() => {
-		if (isOpen && contentRef.current) {
-			const contentHeight = contentRef.current.scrollHeight
-			setAccordionHeight(`${40 + contentHeight}px`)
-		} else {
-			setAccordionHeight('40px')
-		}
-	}, [isOpen])
 
 	const handleToggle = () => {
 		setIsOpen(!isOpen)
@@ -58,9 +46,6 @@ const Accordion: React.FC<AccordionProps> = ({
 			role="button"
 			aria-expanded={isOpen}
 			tabIndex={0}
-			style={{
-				height: accordionHeight,
-			}}
 			onClick={handleToggle}
 			onKeyDown={(e) => {
 				if (e.key === 'Enter' || e.key === ' ') {
@@ -103,39 +88,35 @@ const Accordion: React.FC<AccordionProps> = ({
 					)}
 				</span>
 			</div>
-			{isOpen && (
-				<div className="accordion-content" ref={contentRef}>
-					<div className="accordion-panel">
-						<div className="accordion-meta">
-							<p>
-								{(company || school) && location
-									? `${atLabel} ${company || school} ${inLabel} ${location}`
-									: ''}
+			<div className="accordion-content" aria-hidden={!isOpen}>
+				<div className="accordion-panel">
+					<div className="accordion-meta">
+						<p>
+							{(company || school) && location
+								? `${atLabel} ${company || school} ${inLabel} ${location}`
+								: ''}
 
-								{(company || school) && !location
-									? `${atLabel} ${company || school}`
-									: ''}
+							{(company || school) && !location
+								? `${atLabel} ${company || school}`
+								: ''}
 
-								{!(company || school) && location
-									? `${inLabel} ${location}`
-									: ''}
+							{!(company || school) && location ? `${inLabel} ${location}` : ''}
+						</p>
+					</div>
+					<div className="accordion-description">
+						{content?.map((paragraph, index) => (
+							<p key={index}>{paragraph}</p>
+						))}
+					</div>
+					<div className="accordion-skills">
+						{skills?.map((skill, index) => (
+							<p key={index} className="skill">
+								{skill}
 							</p>
-						</div>
-						<div className="accordion-description">
-							{content?.map((paragraph, index) => (
-								<p key={index}>{paragraph}</p>
-							))}
-						</div>
-						<div className="accordion-skills">
-							{skills?.map((skill, index) => (
-								<p key={index} className="skill">
-									{skill}
-								</p>
-							))}
-						</div>
+						))}
 					</div>
 				</div>
-			)}
+			</div>
 		</div>
 	)
 }

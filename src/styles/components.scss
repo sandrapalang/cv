@@ -5,7 +5,14 @@
 	cursor: pointer;
 	overflow: hidden;
 	padding: 0 var(--space-xs);
-	transition: height var(--motion-duration) var(--motion-ease);
+
+	--accordion-rows-collapsed: 0fr;
+	--accordion-rows-expanded: 1fr;
+	--accordion-rows-current: var(--accordion-rows-collapsed); /* Default state */
+
+	&.open {
+		--accordion-rows-current: var(--accordion-rows-expanded);
+	}
 
 	&:focus-visible {
 		outline: 2px solid var(--color-accent-ink);
@@ -71,12 +78,18 @@
 	}
 
 	&-content {
+		column-gap: var(--grid-gap);
+		display: grid;
+		grid-template-rows: var(--accordion-rows-current);
+		overflow: hidden;
+		transition: grid-template-rows var(--motion-duration) var(--motion-ease);
 	}
 
 	&-panel {
 		column-gap: var(--grid-gap);
 		display: grid;
 		grid-template-columns: minmax(105px, auto) 1fr;
+		min-height: 0;
 	}
 
 	&-meta {
