@@ -1,14 +1,18 @@
 .accordion {
 	background: none;
 	border: none;
-	border-bottom: 1px solid var(--color-text-primary-alpha);
+	border-bottom: 1px solid var(--color-text-primary);
 	cursor: pointer;
-	display: flex;
-	flex-direction: column;
 	overflow: hidden;
-	padding: 10px 0;
-	transition: height 0.4s ease-in-out;
-	width: 100%;
+	padding: 0 var(--space-xs);
+
+	--accordion-rows-collapsed: 0fr;
+	--accordion-rows-expanded: 1fr;
+	--accordion-rows-current: var(--accordion-rows-collapsed); /* Default state */
+
+	&.open {
+		--accordion-rows-current: var(--accordion-rows-expanded);
+	}
 
 	&:focus-visible {
 		outline: 2px solid var(--color-accent-ink);
@@ -16,9 +20,9 @@
 	}
 
 	&:hover {
-		.date h3,
-		.title,
-		.chevron-icon,
+		.accordion-date h3,
+		.accordion-title,
+		.accordion-toggle-icon,
 		p {
 			color: var(--color-accent-ink);
 		}
@@ -26,81 +30,134 @@
 
 	&-header {
 		align-items: center;
-		background: none;
-		border: none;
-		display: flex;
-		justify-content: space-between;
-		outline: none;
+		column-gap: var(--grid-gap);
+		display: grid;
+		grid-template-columns: minmax(105px, auto) 1fr auto;
+		padding: var(--space-xs) 0;
 		position: relative;
 		text-transform: uppercase;
-		width: 100%;
-
-		.date {
-			width: 30%;
-		}
-
-		.title {
-			flex-grow: 1;
-			min-width: 256px;
-		}
-
-		.chevron-icon {
-			color: var(--color-text-primary);
-			display: inline-block;
-			height: 16px;
-			transform-origin: center;
-			transition: transform 0.4s ease-in-out;
-			width: 16px;
-		}
 	}
 
-	&.highlighted .accordion-header {
+	&-date {
+		grid-column: 1;
+	}
+
+	&-title {
+		grid-column: 2;
+	}
+
+	&-toggle-icon {
+		color: var(--color-text-primary);
+		grid-column: 3;
+		height: 20px;
+		justify-self: end;
+		transform-origin: center;
+		transition: transform var(--motion-duration) var(--motion-ease);
+		width: 20px;
+	}
+
+	.chevron-icon {
+		fill: none;
+		stroke: currentColor;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke-width: 2.25;
+	}
+
+	&.highlighted .highlight-anchor {
+		grid-column: 1;
+		height: 0;
+		pointer-events: none;
 		position: relative;
+		width: 0;
+		z-index: 0;
 	}
 
-	& .highlight-dot {
+	.highlight-indicator {
 		background: var(--color-accent-ink);
 		border-radius: 50%;
-		position: absolute;
 		height: 10px;
 		left: 102px;
-		top: 4px;
+		pointer-events: none;
+		position: absolute;
+		top: -13px;
 		width: 10px;
+		z-index: 1;
 	}
 
 	&-content {
-		display: flex;
-		justify-content: flex-end;
+		column-gap: var(--grid-gap);
+		display: grid;
+		grid-template-rows: var(--accordion-rows-current);
 		overflow: hidden;
-		padding: 8px 0 0;
-		width: 100%;
+		transition: grid-template-rows var(--motion-duration) var(--motion-ease);
+	}
 
-		.header {
-			display: flex;
-			flex-direction: column;
-			justify-content: flex-start;
-			width: 70%;
+	&-panel {
+		column-gap: var(--grid-gap);
+		display: grid;
+		grid-template-columns: minmax(105px, auto) 1fr;
+		min-height: 0;
+	}
 
-			> p {
-				font-size: 0.75rem;
-				font-weight: 350;
-				letter-spacing: 0.035rem;
-			}
+	&-meta {
+		display: contents;
+	}
 
-			.content {
-				display: flex;
-				flex-direction: column;
-				gap: 24px;
-				margin: 14px 0 18px;
-				width: 100%;
-			}
+	&-meta > p {
+		grid-column: 2;
+		font-size: 0.75rem;
+		font-weight: 350;
+		letter-spacing: 0.035rem;
+	}
 
-			.skill {
-				border: 0.5px solid var(--color-text-secondary-alpha);
-				border-radius: 16px;
-				font-size: 12px;
-				padding: 4px 8px;
-			}
+	&-description {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-md);
+		grid-column: 2;
+		margin: var(--space-sm) 0 var(--space-md);
+	}
+
+	&-skills {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 4px;
+		grid-column: 2;
+		padding: 0 0 var(--space-sm);
+
+		.skill {
+			border: 0.5px solid var(--color-text-secondary-alpha);
+			border-radius: 16px;
+			font-size: 12px;
+			padding: 4px var(--space-xxs);
+		}
+	}
+
+	@media (min-width: 992px) {
+		padding: 0;
+
+		&-header {
+			grid-template-columns: minmax(175px, auto) 1fr auto;
+		}
+
+		&-toggle-icon {
+			height: 22px;
+			width: 22px;
+		}
+
+		.highlight-indicator {
+			left: 140px;
+		}
+
+		&-panel {
+			grid-template-columns: minmax(175px, auto) 1fr;
+		}
+
+		&-meta > p,
+		&-description,
+		&-skills {
+			max-width: 680px;
 		}
 	}
 }
@@ -108,7 +165,7 @@
 .chip {
 	display: inline-flex;
 	align-items: center;
-	padding: 8px 12px;
+	padding: var(--space-xxs) var(--space-xs);
 	border-radius: 16px;
 	background-color: var(--color-bg-secondary-alpha);
 	color: var(--color-text-primary-alpha);

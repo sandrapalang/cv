@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useState } from 'react'
 import ChevronDown from '../icons/ChevronDown'
 
 interface AccordionProps {
@@ -32,20 +32,8 @@ const Accordion: React.FC<AccordionProps> = ({
 	skills,
 	isHighlighted,
 }) => {
-	const contentRef = useRef<HTMLDivElement>(null)
-
 	const [isOpen, setIsOpen] = useState(false)
-	const [accordionHeight, setAccordionHeight] = useState('40px')
 	const [rotation, setRotation] = useState(0)
-
-	useEffect(() => {
-		if (isOpen && contentRef.current) {
-			const contentHeight = contentRef.current.scrollHeight
-			setAccordionHeight(`${40 + contentHeight}px`)
-		} else {
-			setAccordionHeight('40px')
-		}
-	}, [isOpen])
 
 	const handleToggle = () => {
 		setIsOpen(!isOpen)
@@ -58,9 +46,6 @@ const Accordion: React.FC<AccordionProps> = ({
 			role="button"
 			aria-expanded={isOpen}
 			tabIndex={0}
-			style={{
-				height: accordionHeight,
-			}}
 			onClick={handleToggle}
 			onKeyDown={(e) => {
 				if (e.key === 'Enter' || e.key === ' ') {
@@ -71,35 +56,41 @@ const Accordion: React.FC<AccordionProps> = ({
 		>
 			<div className="accordion-header">
 				{(startDate || endDate) && (
-					<div className="date">
+					<div className="accordion-date">
 						<h3>
 							{startDate}
 							{endDate ? ` - ${endDate}` : ''}
 						</h3>
 					</div>
 				)}
-				<h3 className="title">
+				<h3 className="accordion-title">
 					{title}
 					{isInternship && internship ? ` (${internship})` : ''}
 				</h3>
 				<span
-					className="chevron-icon"
+					className="accordion-toggle-icon"
 					style={{ transform: `rotate(${rotation}deg)` }}
 					aria-hidden="true"
 				>
 					<ChevronDown />
 				</span>
-				{isHighlighted && (
-					<span
-						className="highlight-dot"
-						aria-hidden="true"
-						role="presentation"
-					/>
-				)}
+				<span
+					className="highlight-anchor"
+					aria-hidden="true"
+					role="presentation"
+				>
+					{isHighlighted && (
+						<span
+							className="highlight-indicator"
+							aria-hidden="true"
+							role="presentation"
+						/>
+					)}
+				</span>
 			</div>
-			{isOpen && (
-				<div className="accordion-content" ref={contentRef}>
-					<div className="header">
+			<div className="accordion-content" aria-hidden={!isOpen}>
+				<div className="accordion-panel">
+					<div className="accordion-meta">
 						<p>
 							{(company || school) && location
 								? `${atLabel} ${company || school} ${inLabel} ${location}`
@@ -111,21 +102,21 @@ const Accordion: React.FC<AccordionProps> = ({
 
 							{!(company || school) && location ? `${inLabel} ${location}` : ''}
 						</p>
-						<div className="content">
-							{content?.map((paragraph, index) => (
-								<p key={index}>{paragraph}</p>
-							))}
-						</div>
-						<div className="skills">
-							{skills?.map((skill, index) => (
-								<p key={index} className="skill">
-									{skill}
-								</p>
-							))}
-						</div>
+					</div>
+					<div className="accordion-description">
+						{content?.map((paragraph, index) => (
+							<p key={index}>{paragraph}</p>
+						))}
+					</div>
+					<div className="accordion-skills">
+						{skills?.map((skill, index) => (
+							<p key={index} className="skill">
+								{skill}
+							</p>
+						))}
 					</div>
 				</div>
-			)}
+			</div>
 		</div>
 	)
 }

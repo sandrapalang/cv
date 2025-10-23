@@ -21,4 +21,19 @@
 	--color-text-secondary-alpha: rgba(29, 29, 29, 0.59);
 	--color-text-tertiary-alpha: rgba(29, 29, 29, 0.49);
 	--color-text-quaternary-alpha: rgba(29, 29, 29, 0.29);
+
+	--grid-columns: 12;
+	--grid-gap-md: 16px;
+	--grid-gap: var(--grid-gap-md);
+
+	--motion-duration: 400ms;
+	--motion-ease: ease-in-out;
+
+	--space-xxs: 8px;
+	--space-xs: 12px;
+	--space-sm: 16px;
+	--space-md: 24px;
+	--space-lg: 32px;
+	--space-xl: 72px;
+	--space-xxl: 96px;
 }
