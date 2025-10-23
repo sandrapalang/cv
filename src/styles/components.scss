@@ -49,11 +49,11 @@
 	&-toggle-icon {
 		color: var(--color-text-primary);
 		grid-column: 3;
-		height: 16px;
+		height: 20px;
 		justify-self: end;
 		transform-origin: center;
 		transition: transform var(--motion-duration) var(--motion-ease);
-		width: 16px;
+		width: 20px;
 	}
 
 	.chevron-icon {
@@ -139,6 +139,11 @@
 
 		&-header {
 			grid-template-columns: minmax(175px, auto) 1fr auto;
+		}
+
+		&-toggle-icon {
+			height: 22px;
+			width: 22px;
 		}
 
 		.highlight-indicator {
