@@ -38,6 +38,15 @@ p {
 	font-size: 0.875rem;
 }
 
+@font-face {
+	font-family: 'Biro Script Sloppy';
+	font-style: normal;
+	font-weight: normal;
+	src:
+		url('../assets/fonts/biro_script_sloppy_plus_us.woff') format('woff'),
+		url('../assets/fonts/biro_script_sloppy_plus_us.woff2') format('woff2');
+}
+
 @media (width >= 992px) {
 	h3 {
 		font-size: 0.9rem;
