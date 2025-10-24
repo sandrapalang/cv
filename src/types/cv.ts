@@ -1,4 +1,11 @@
+export interface AboutItem {
+	firstname: string
+	lastname: string
+	summary?: string[]
+}
+
 export interface CvData {
+	about?: AboutItem[]
 	cv: CvItem[]
 	education: EducationItem[]
 	headings: Headings
