@@ -61,6 +61,24 @@
 			grid-column: 1 / -1;
 			padding: var(--space-xs) var(--space-xs) 0;
 		}
+
+		&-content > .cv-signature,
+		&-content > .cv-summary {
+			grid-column: 1 / -1;
+		}
+
+		.cv-signature {
+			text-align: center;
+			padding: 0 0 var(--space-md);
+		}
+
+		.cv-summary {
+			padding: 0 var(--space-xs);
+		}
+	}
+
+	.section:first-child {
+		padding: 0 0 var(--space-xl);
 	}
 
 	@media (width >= 992px) {
@@ -88,9 +106,23 @@
 				padding: var(--space-md) 0 0;
 			}
 
+			&-content:first-child {
+				padding: 0;
+			}
+
 			&-content > .accordion,
+			&-content > .cv-signature,
+			&-content > .cv-summary,
 			&-content > .skills {
 				grid-column: 5 / span 7;
+			}
+
+			&-content .cv-signature {
+				text-align: left;
+			}
+
+			&-content .cv-summary {
+				padding: 0;
 			}
 
 			&-content > .skills {
