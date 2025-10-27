@@ -4,7 +4,7 @@ import Chip from '../components/Chip'
 import { data } from '../data/data'
 
 function Cv() {
-	const { headings, work, education, skills } = data
+	const { about, headings, work, education, skills } = data
 
 	const [selectedSkill, setSelectedSkill] = useState<string | null>(null)
 
@@ -42,6 +42,18 @@ function Cv() {
 		<div className="cv">
 			<main>
 				<div className="sections">
+					<div className="section">
+						<div className="section-content">
+							<div className="cv-signature">
+								<h1>{about && `${about[0].firstname} ${about[0].lastname}`}</h1>
+							</div>
+
+							<div className="cv-summary">
+								<p>{about && about[0].summary}</p>
+							</div>
+						</div>
+					</div>
+
 					<div className="section">
 						<div className="section-divider" aria-hidden="true" />
 						<div className="section-title bb">

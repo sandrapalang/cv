@@ -20,6 +20,14 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
+h1 {
+	color: var(--color-accent-ink);
+	font-family: 'Biro Script Sloppy';
+	font-size: 2.75rem;
+	font-weight: 500;
+	line-height: 1.4;
+}
+
 h2 {
 	color: var(--color-text-quaternary-alpha);
 	font-size: 1.875rem;
@@ -36,6 +44,16 @@ h3 {
 
 p {
 	font-size: 0.875rem;
+	line-height: 1.4;
+}
+
+@font-face {
+	font-family: 'Biro Script Sloppy';
+	font-style: normal;
+	font-weight: normal;
+	src:
+		url('../assets/fonts/biro_script_sloppy_plus_us.woff') format('woff'),
+		url('../assets/fonts/biro_script_sloppy_plus_us.woff2') format('woff2');
 }
 
 @media (width >= 992px) {

@@ -1,6 +1,15 @@
 import type { CvData } from '../types/cv'
 
 export const data: CvData = {
+	about: [
+		{
+			firstname: 'Sandra',
+			lastname: 'Paläng',
+			summary: [
+				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt, ligula ut hendrerit malesuada, tortor magna bibendum nisi, in porttitor libero ante sed felis. Cras sed metus non justo tempor tristique. Donec vulputate diam nec justo convallis, at dignissim sapien sollicitudin. ',
+			],
+		},
+	],
 	cv: [{ id: 'CV' }],
 	education: [
 		{
