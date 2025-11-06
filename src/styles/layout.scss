@@ -26,7 +26,7 @@
 	}
 
 	.section {
-		padding: 0 0 var(--space-xxl);
+		padding: 0 0 var(--space-xxxl);
 
 		&-divider {
 			background-color: var(--color-text-primary-alpha);
@@ -37,7 +37,7 @@
 		}
 
 		&-title {
-			padding: 0 var(--space-xs) var(--space-xs);
+			padding: 0 var(--space-xs) var(--space-xxxs);
 		}
 
 		&-title.bb {
@@ -59,7 +59,7 @@
 			flex-wrap: wrap;
 			gap: 8px;
 			grid-column: 1 / -1;
-			padding: var(--space-xs) var(--space-xs) 0;
+			padding: var(--space-xxs) var(--space-xxs) 0;
 		}
 
 		&-content > .cv-signature,
@@ -73,12 +73,12 @@
 		}
 
 		.cv-summary {
-			padding: 0 var(--space-xs);
+			padding: 0 var(--space-xxs);
 		}
 	}
 
 	.section:first-child {
-		padding: 0 0 var(--space-xl);
+		padding: 0 0 var(--space-xxxl);
 	}
 
 	@media (width >= 992px) {
@@ -87,14 +87,14 @@
 		}
 
 		.section {
-			margin: 0 var(--space-sm);
+			margin: 0 var(--space-xs);
 
 			&-divider {
 				display: block;
 			}
 
 			&-title {
-				padding: var(--space-xs) var(--space-xs) 0;
+				padding: var(--space-xxs) var(--space-xxs) 0;
 			}
 
 			&-title.bb {
@@ -103,11 +103,6 @@
 
 			&-content {
 				grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
-				padding: var(--space-md) 0 0;
-			}
-
-			&-content:first-child {
-				padding: 0;
 			}
 
 			&-content > .accordion,
@@ -126,7 +121,7 @@
 			}
 
 			&-content > .skills {
-				padding: var(--space-lg) 0 0;
+				padding: 0;
 			}
 		}
 	}

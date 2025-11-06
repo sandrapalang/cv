@@ -4,7 +4,7 @@
 	border-bottom: 1px solid var(--color-text-primary);
 	cursor: pointer;
 	overflow: hidden;
-	padding: 0 var(--space-xs);
+	padding: 0 var(--space-xxxs);
 
 	--accordion-rows-collapsed: 0fr;
 	--accordion-rows-expanded: 1fr;
@@ -33,7 +33,7 @@
 		column-gap: var(--grid-gap);
 		display: grid;
 		grid-template-columns: minmax(105px, auto) 1fr auto;
-		padding: var(--space-xs) 0;
+		padding: 10px 0;
 		position: relative;
 		text-transform: uppercase;
 	}
@@ -114,9 +114,9 @@
 	&-description {
 		display: flex;
 		flex-direction: column;
-		gap: var(--space-md);
+		gap: var(--space-sm);
 		grid-column: 2;
-		margin: var(--space-sm) 0 var(--space-md);
+		margin: var(--space-xs) 0 var(--space-sm);
 	}
 
 	&-skills {
@@ -124,13 +124,13 @@
 		flex-wrap: wrap;
 		gap: 4px;
 		grid-column: 2;
-		padding: 0 0 var(--space-sm);
+		padding: 0 0 var(--space-xs);
 
 		.skill {
 			border: 0.5px solid var(--color-text-secondary-alpha);
 			border-radius: 16px;
 			font-size: 12px;
-			padding: 4px var(--space-xxs);
+			padding: 4px var(--space-xxxs);
 		}
 	}
 
@@ -165,7 +165,7 @@
 .chip {
 	display: inline-flex;
 	align-items: center;
-	padding: var(--space-xxs) var(--space-xs);
+	padding: var(--space-xxxs) var(--space-xxs);
 	border-radius: 16px;
 	background-color: var(--color-bg-secondary-alpha);
 	color: var(--color-text-primary-alpha);
