@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import MenuToggleButton from './MenuToggleButton'
 
 interface MenuProps {
@@ -7,6 +7,8 @@ interface MenuProps {
 
 function Menu({ onMenuToggle }: MenuProps) {
 	const [isMenuOpen, setIsMenuOpen] = useState(false)
+	const menuRef = useRef<HTMLDivElement>(null)
+	const toggleButtonRef = useRef<HTMLButtonElement | null>(null)
 
 	const now = new Date()
 
@@ -31,11 +33,48 @@ function Menu({ onMenuToggle }: MenuProps) {
 		}
 	}
 
+	useEffect(() => {
+		const handleClickOutside = (event: MouseEvent) => {
+			const target = event.target as Node
+
+			if (
+				menuRef.current &&
+				!menuRef.current.contains(target) &&
+				toggleButtonRef.current &&
+				!toggleButtonRef.current.contains(target)
+			) {
+				setIsMenuOpen(false)
+				if (onMenuToggle) {
+					onMenuToggle(false)
+				}
+			}
+		}
+
+		if (isMenuOpen) {
+			document.addEventListener('mousedown', handleClickOutside)
+		} else {
+			document.removeEventListener('mousedown', handleClickOutside)
+		}
+
+		return () => {
+			document.removeEventListener('mousedown', handleClickOutside)
+		}
+	}, [isMenuOpen, onMenuToggle])
+
 	return (
 		<>
-			<MenuToggleButton isMenuOpen={isMenuOpen} onToggle={toggleMenu} />
+			<MenuToggleButton
+				isMenuOpen={isMenuOpen}
+				onToggle={toggleMenu}
+				buttonRef={toggleButtonRef}
+				ariaControlsId="main-menu"
+			/>
 
-			<div className={`menu${isMenuOpen ? ' open' : ''}`} id="main-menu">
+			<div
+				className={`menu${isMenuOpen ? ' open' : ''}`}
+				ref={menuRef}
+				id="main-menu"
+			>
 				<div className="menu-container">
 					<div className="time-and-date">
 						<div className="date">
