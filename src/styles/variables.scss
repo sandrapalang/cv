@@ -23,17 +23,27 @@
 	--color-text-quaternary-alpha: rgba(29, 29, 29, 0.29);
 
 	--grid-columns: 12;
-	--grid-gap-md: 16px;
-	--grid-gap: var(--grid-gap-md);
+	--grid-gap: 1rem;
+	--grid-gap-desktop: 1.5rem;
+
+	--grid-column-width: calc(
+		(
+				100vw - (var(--space-md) * 2) -
+					((var(--grid-columns) - 1) * var(--grid-gap-desktop))
+			) /
+			var(--grid-columns)
+	);
 
 	--motion-duration: 400ms;
 	--motion-ease: ease-in-out;
 
-	--space-xxs: 8px;
-	--space-xs: 12px;
-	--space-sm: 16px;
-	--space-md: 24px;
-	--space-lg: 32px;
-	--space-xl: 72px;
-	--space-xxl: 96px;
+	--space-xxxs: 0.5rem;
+	--space-xxs: 0.75rem;
+	--space-xs: 1rem;
+	--space-sm: 1.5rem;
+	--space-md: 2rem;
+	--space-lg: 3rem;
+	--space-xl: 3.5rem;
+	--space-xxl: 4.5rem;
+	--space-xxxl: 6rem;
 }
