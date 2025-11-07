@@ -33,7 +33,7 @@
 		column-gap: var(--grid-gap);
 		display: grid;
 		grid-template-columns: minmax(105px, auto) 1fr auto;
-		padding: 10px 0;
+		padding: var(--space-xxs) 0;
 		position: relative;
 		text-transform: uppercase;
 	}
