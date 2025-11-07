@@ -206,3 +206,114 @@
 		}
 	}
 }
+
+.menu-toggle-icon {
+	width: 36px;
+	height: 36px;
+
+	.line {
+		fill: none;
+		stroke: currentColor;
+		stroke-width: 2;
+		stroke-linecap: round;
+		transform-origin: 12px 12px; // center of the 24x24 viewBox
+	}
+
+	/* A: open menu state (two parallel "=" lines) */
+	&.state-open {
+		.line--primary {
+			transform: translateY(-5.0634px);
+		}
+
+		.line--secondary {
+			transform: translateY(4.9366px);
+		}
+	}
+
+	/* C: closed menu state (X-shaped close icon) */
+	&.state-close {
+		.line--primary {
+			transform: rotate(45deg);
+		}
+
+		.line--secondary {
+			transform: rotate(-45deg);
+		}
+	}
+
+	/* A → B → C: animate from menu icon to close icon */
+	&.animation-open-to-close {
+		.line--primary {
+			animation: menu-toggle-primary-open-to-close var(--motion-duration) ease
+				forwards;
+		}
+
+		.line--secondary {
+			animation: menu-toggle-secondary-open-to-close var(--motion-duration) ease
+				forwards;
+		}
+	}
+
+	/* C → B → A: animate from close icon back to menu icon */
+	&.animation-close-to-open {
+		.line--primary {
+			animation: menu-toggle-primary-close-to-open var(--motion-duration) ease
+				forwards;
+		}
+
+		.line--secondary {
+			animation: menu-toggle-secondary-close-to-open var(--motion-duration) ease
+				forwards;
+		}
+	}
+}
+
+/* Keyframes – primary line (upper stroke) */
+@keyframes menu-toggle-primary-open-to-close {
+	0% {
+		transform: translateY(-5.0634px) rotate(0deg);
+	}
+	50% {
+		transform: translateY(0) rotate(0deg);
+	}
+	100% {
+		transform: translateY(0) rotate(45deg);
+	}
+}
+
+@keyframes menu-toggle-primary-close-to-open {
+	0% {
+		transform: translateY(0) rotate(45deg);
+	}
+	50% {
+		transform: translateY(0) rotate(0deg);
+	}
+	100% {
+		transform: translateY(-5.0634px) rotate(0deg);
+	}
+}
+
+/* Keyframes – secondary line (lower stroke) */
+@keyframes menu-toggle-secondary-open-to-close {
+	0% {
+		transform: translateY(4.9366px) rotate(0deg);
+	}
+	50% {
+		transform: translateY(0) rotate(0deg);
+	}
+	100% {
+		transform: translateY(0) rotate(-45deg);
+	}
+}
+
+@keyframes menu-toggle-secondary-close-to-open {
+	0% {
+		transform: translateY(0) rotate(-45deg);
+	}
+	50% {
+		transform: translateY(0) rotate(0deg);
+	}
+	100% {
+		transform: translateY(4.9366px) rotate(0deg);
+	}
+}
