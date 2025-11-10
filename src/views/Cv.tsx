@@ -1,12 +1,16 @@
 import { useEffect, useState } from 'react'
 import Accordion from '../components/Accordion'
 import Chip from '../components/Chip'
+import Menu from '../components/Menu'
 import { data } from '../data/data'
 
 function Cv() {
 	const { about, headings, work, education, skills } = data
 
+	const [isMenuOpen, setIsMenuOpen] = useState(false)
 	const [selectedSkill, setSelectedSkill] = useState<string | null>(null)
+
+	const handleMenuToggle = (isOpen: boolean) => setIsMenuOpen(isOpen)
 
 	const handleSkillClick = (slug: string) => {
 		setSelectedSkill((prev) => (prev === slug ? null : slug))
@@ -39,7 +43,12 @@ function Cv() {
 		: []
 
 	return (
-		<div className="cv">
+		<div className={`cv${isMenuOpen ? ' menu-open' : ''}`}>
+			<header>
+				<div className="header-container">
+					<Menu onMenuToggle={handleMenuToggle} />
+				</div>
+			</header>
 			<main>
 				<div className="sections">
 					<div className="section">
