@@ -1,5 +1,3 @@
-import React from 'react'
-
 type AnimationDirection = 'idle' | 'openToClose' | 'closeToOpen'
 
 type MenuToggleIconProps = {
@@ -8,11 +6,11 @@ type MenuToggleIconProps = {
 	onAnimationEnd: () => void
 }
 
-const MenuToggleIcon: React.FC<MenuToggleIconProps> = ({
+function MenuToggleIcon({
 	isMenuOpen,
 	animationDirection,
 	onAnimationEnd,
-}) => {
+}: MenuToggleIconProps) {
 	const baseStateClass = isMenuOpen ? 'state-close' : 'state-open'
 
 	const animationClass =
