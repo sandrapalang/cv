@@ -1,20 +1,18 @@
-import React from 'react'
-
 interface ChipProps {
 	label: string
 	clickable?: boolean
 	disabled?: boolean
-	selected?: boolean
 	onClick?: () => void
+	selected?: boolean
 }
 
-const Chip: React.FC<ChipProps> = ({
+function Chip({
 	label,
 	clickable = false,
 	disabled = false,
-	selected = false,
 	onClick,
-}) => {
+	selected = false,
+}: ChipProps) {
 	const handleClick = () => {
 		if (clickable && !disabled && onClick) {
 			onClick()
@@ -24,15 +22,15 @@ const Chip: React.FC<ChipProps> = ({
 	const classNames = [
 		'chip',
 		clickable ? 'clickable' : '',
-		selected ? 'selected' : '',
 		disabled ? 'disabled' : '',
+		selected ? 'selected' : '',
 	].join(' ')
 
 	return (
 		<button
 			className={classNames}
-			aria-label={clickable && selected ? 'selected' : ''}
 			disabled={disabled}
+			aria-label={clickable && selected ? 'selected' : ''}
 			onClick={handleClick}
 		>
 			<span className="label">{label}</span>

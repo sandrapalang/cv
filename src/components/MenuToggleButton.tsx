@@ -9,16 +9,19 @@ type MenuToggleButtonProps = {
 	buttonRef?: React.RefObject<HTMLButtonElement | null>
 }
 
-const MenuToggleButton: React.FC<MenuToggleButtonProps> = ({
+function MenuToggleButton({
 	isMenuOpen,
 	onToggle,
 	ariaControlsId,
 	buttonRef,
-}) => {
+}: MenuToggleButtonProps) {
 	const [animationDirection, setAnimationDirection] =
 		useState<AnimationDirection>('idle')
-
 	const previousIsMenuOpen = useRef(isMenuOpen)
+
+	const handleAnimationEnd = () => {
+		setAnimationDirection('idle')
+	}
 
 	const handleClick = () => {
 		if (animationDirection !== 'idle') return
@@ -47,19 +50,15 @@ const MenuToggleButton: React.FC<MenuToggleButtonProps> = ({
 		previousIsMenuOpen.current = isMenuOpen
 	}, [isMenuOpen, animationDirection])
 
-	const handleAnimationEnd = () => {
-		setAnimationDirection('idle')
-	}
-
 	return (
 		<button
+			className="menu-toggle-button"
 			ref={buttonRef}
 			type="button"
-			className="menu-toggle-button"
-			onClick={handleClick}
 			aria-controls={ariaControlsId}
 			aria-expanded={isMenuOpen}
 			aria-label={isMenuOpen ? 'Stäng meny' : 'Öppna meny'}
+			onClick={handleClick}
 		>
 			<MenuToggleIcon
 				animationDirection={animationDirection}

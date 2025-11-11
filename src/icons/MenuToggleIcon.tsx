@@ -1,20 +1,16 @@
-import React from 'react'
-
 type AnimationDirection = 'idle' | 'openToClose' | 'closeToOpen'
 
 type MenuToggleIconProps = {
-	isMenuOpen: boolean
 	animationDirection: AnimationDirection
+	isMenuOpen: boolean
 	onAnimationEnd: () => void
 }
 
-const MenuToggleIcon: React.FC<MenuToggleIconProps> = ({
-	isMenuOpen,
+function MenuToggleIcon({
 	animationDirection,
+	isMenuOpen,
 	onAnimationEnd,
-}) => {
-	const baseStateClass = isMenuOpen ? 'state-close' : 'state-open'
-
+}: MenuToggleIconProps) {
 	const animationClass =
 		animationDirection === 'openToClose'
 			? 'animation-open-to-close'
@@ -22,13 +18,14 @@ const MenuToggleIcon: React.FC<MenuToggleIconProps> = ({
 				? 'animation-close-to-open'
 				: ''
 
+	const baseStateClass = isMenuOpen ? 'state-close' : 'state-open'
+
 	return (
 		<svg
 			className={`menu-toggle-icon${baseStateClass ? ` ${baseStateClass}` : ''}${animationClass ? ` ${animationClass}` : ''}`}
+			viewBox="0 0 24 24"
 			aria-hidden="true"
 			focusable="false"
-			xmlns="http://www.w3.org/2000/svg"
-			viewBox="0 0 24 24"
 			onAnimationEnd={onAnimationEnd}
 		>
 			<line

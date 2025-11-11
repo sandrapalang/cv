@@ -64,16 +64,16 @@ function Menu({ onMenuToggle }: MenuProps) {
 	return (
 		<>
 			<MenuToggleButton
+				ariaControlsId="main-menu"
+				buttonRef={toggleButtonRef}
 				isMenuOpen={isMenuOpen}
 				onToggle={toggleMenu}
-				buttonRef={toggleButtonRef}
-				ariaControlsId="main-menu"
 			/>
 
 			<div
+				id="main-menu"
 				className={`menu${isMenuOpen ? ' open' : ''}`}
 				ref={menuRef}
-				id="main-menu"
 			>
 				<div className="menu-container">
 					<div className="time-and-date">
