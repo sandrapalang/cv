@@ -1,5 +1,3 @@
-import React from 'react'
-
 interface ChipProps {
 	label: string
 	clickable?: boolean
@@ -8,13 +6,13 @@ interface ChipProps {
 	onClick?: () => void
 }
 
-const Chip: React.FC<ChipProps> = ({
+const Chip = ({
 	label,
 	clickable = false,
 	disabled = false,
 	selected = false,
 	onClick,
-}) => {
+}: ChipProps) => {
 	const handleClick = () => {
 		if (clickable && !disabled && onClick) {
 			onClick()

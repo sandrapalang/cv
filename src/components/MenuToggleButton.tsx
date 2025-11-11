@@ -9,12 +9,12 @@ type MenuToggleButtonProps = {
 	buttonRef?: React.RefObject<HTMLButtonElement | null>
 }
 
-const MenuToggleButton: React.FC<MenuToggleButtonProps> = ({
+const MenuToggleButton = ({
 	isMenuOpen,
 	onToggle,
 	ariaControlsId,
 	buttonRef,
-}) => {
+}: MenuToggleButtonProps) => {
 	const [animationDirection, setAnimationDirection] =
 		useState<AnimationDirection>('idle')
 

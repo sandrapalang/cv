@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import ChevronDown from '../icons/ChevronDown'
 
 interface AccordionProps {
@@ -17,7 +17,7 @@ interface AccordionProps {
 	isHighlighted?: boolean
 }
 
-const Accordion: React.FC<AccordionProps> = ({
+const Accordion = ({
 	startDate,
 	endDate,
 	title,
@@ -31,7 +31,7 @@ const Accordion: React.FC<AccordionProps> = ({
 	content,
 	skills,
 	isHighlighted,
-}) => {
+}: AccordionProps) => {
 	const [isOpen, setIsOpen] = useState(false)
 	const [rotation, setRotation] = useState(0)
 
