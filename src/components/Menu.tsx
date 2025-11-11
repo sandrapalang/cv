@@ -64,10 +64,10 @@ function Menu({ onMenuToggle }: MenuProps) {
 	return (
 		<>
 			<MenuToggleButton
-				isMenuOpen={isMenuOpen}
-				onToggle={toggleMenu}
 				ariaControlsId="main-menu"
 				buttonRef={toggleButtonRef}
+				isMenuOpen={isMenuOpen}
+				onToggle={toggleMenu}
 			/>
 
 			<div
