@@ -77,8 +77,8 @@ function Cv() {
 										startDate={work.startDate}
 										endDate={work.endDate}
 										title={work.title}
-										isInternship={work.isInternship}
 										internship={work.internship}
+										isInternship={work.isInternship}
 										atLabel={headings.at}
 										company={work.company?.name}
 										inLabel={headings.in}
@@ -131,8 +131,8 @@ function Cv() {
 											key={skill.slug}
 											label={skill.label}
 											clickable
-											selected={selectedSkill === skill.slug}
 											onClick={() => handleSkillClick(skill.slug)}
+											selected={selectedSkill === skill.slug}
 										/>
 									))}
 								</div>
