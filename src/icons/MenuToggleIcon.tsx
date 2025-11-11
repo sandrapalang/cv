@@ -23,9 +23,9 @@ function MenuToggleIcon({
 	return (
 		<svg
 			className={`menu-toggle-icon${baseStateClass ? ` ${baseStateClass}` : ''}${animationClass ? ` ${animationClass}` : ''}`}
+			viewBox="0 0 24 24"
 			aria-hidden="true"
 			focusable="false"
-			viewBox="0 0 24 24"
 			onAnimationEnd={onAnimationEnd}
 		>
 			<line
