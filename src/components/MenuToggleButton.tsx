@@ -17,7 +17,6 @@ const MenuToggleButton = ({
 }: MenuToggleButtonProps) => {
 	const [animationDirection, setAnimationDirection] =
 		useState<AnimationDirection>('idle')
-
 	const previousIsMenuOpen = useRef(isMenuOpen)
 
 	const handleClick = () => {
@@ -53,13 +52,13 @@ const MenuToggleButton = ({
 
 	return (
 		<button
+			className="menu-toggle-button"
 			ref={buttonRef}
 			type="button"
-			className="menu-toggle-button"
-			onClick={handleClick}
 			aria-controls={ariaControlsId}
 			aria-expanded={isMenuOpen}
 			aria-label={isMenuOpen ? 'Stäng meny' : 'Öppna meny'}
+			onClick={handleClick}
 		>
 			<MenuToggleIcon
 				animationDirection={animationDirection}

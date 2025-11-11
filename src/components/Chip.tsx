@@ -22,15 +22,15 @@ const Chip = ({
 	const classNames = [
 		'chip',
 		clickable ? 'clickable' : '',
-		selected ? 'selected' : '',
 		disabled ? 'disabled' : '',
+		selected ? 'selected' : '',
 	].join(' ')
 
 	return (
 		<button
 			className={classNames}
-			aria-label={clickable && selected ? 'selected' : ''}
 			disabled={disabled}
+			aria-label={clickable && selected ? 'selected' : ''}
 			onClick={handleClick}
 		>
 			<span className="label">{label}</span>

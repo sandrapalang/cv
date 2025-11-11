@@ -66,14 +66,14 @@ const Menu = ({ onMenuToggle }: MenuProps) => {
 			<MenuToggleButton
 				isMenuOpen={isMenuOpen}
 				onToggle={toggleMenu}
-				buttonRef={toggleButtonRef}
 				ariaControlsId="main-menu"
+				buttonRef={toggleButtonRef}
 			/>
 
 			<div
+				id="main-menu"
 				className={`menu${isMenuOpen ? ' open' : ''}`}
 				ref={menuRef}
-				id="main-menu"
 			>
 				<div className="menu-container">
 					<div className="time-and-date">

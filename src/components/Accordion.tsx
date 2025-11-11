@@ -45,8 +45,8 @@ const Accordion = ({
 		<div
 			className={`accordion${isOpen ? ' open' : ''}${isHighlighted ? ' highlighted' : ''}`}
 			role="button"
-			aria-expanded={isOpen}
 			tabIndex={0}
+			aria-expanded={isOpen}
 			onClick={handleToggle}
 			onKeyDown={(e) => {
 				if (e.key === 'Enter' || e.key === ' ') {
@@ -77,14 +77,14 @@ const Accordion = ({
 				</span>
 				<span
 					className="highlight-anchor"
-					aria-hidden="true"
 					role="presentation"
+					aria-hidden="true"
 				>
 					{isHighlighted && (
 						<span
 							className="highlight-indicator"
-							aria-hidden="true"
 							role="presentation"
+							aria-hidden="true"
 						/>
 					)}
 				</span>
