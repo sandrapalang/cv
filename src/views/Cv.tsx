@@ -5,10 +5,21 @@ import Menu from '../components/Menu'
 import { data } from '../data/data'
 
 function Cv() {
-	const { about, headings, work, education, skills } = data
-
 	const [isMenuOpen, setIsMenuOpen] = useState(false)
 	const [selectedSkill, setSelectedSkill] = useState<string | null>(null)
+
+	const { about, headings, work, education, skills } = data
+
+	const highlightedIds = selectedSkill
+		? (skills.find((skill) => skill.slug === selectedSkill)?.usedIn ?? [])
+		: []
+
+	const selectedSkills = skills.filter((skill) => skill.usedIn.includes('CV'))
+
+	const skillsFor = (contextId: string) =>
+		skills
+			.filter((skill) => skill.usedIn.includes(contextId))
+			.map((s) => s.label)
 
 	const handleMenuToggle = (isOpen: boolean) => setIsMenuOpen(isOpen)
 
@@ -30,17 +41,6 @@ function Cv() {
 			localStorage.removeItem('selectedSkill')
 		}
 	}, [selectedSkill])
-
-	const skillsFor = (contextId: string) =>
-		skills
-			.filter((skill) => skill.usedIn.includes(contextId))
-			.map((s) => s.label)
-
-	const selectedSkills = skills.filter((skill) => skill.usedIn.includes('CV'))
-
-	const highlightedIds = selectedSkill
-		? (skills.find((s) => s.slug === selectedSkill)?.usedIn ?? [])
-		: []
 
 	return (
 		<div className={`cv${isMenuOpen ? ' menu-open' : ''}`}>
