@@ -6,13 +6,13 @@ interface ChipProps {
 	selected?: boolean
 }
 
-const Chip = ({
+function Chip({
 	label,
 	clickable = false,
 	disabled = false,
 	onClick,
 	selected = false,
-}: ChipProps) => {
+}: ChipProps) {
 	const handleClick = () => {
 		if (clickable && !disabled && onClick) {
 			onClick()

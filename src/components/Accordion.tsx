@@ -18,7 +18,7 @@ interface AccordionProps {
 	skills?: string[]
 }
 
-const Accordion = ({
+function Accordion({
 	atLabel,
 	startDate,
 	title,
@@ -32,7 +32,7 @@ const Accordion = ({
 	location,
 	school,
 	skills,
-}: AccordionProps) => {
+}: AccordionProps) {
 	const [isOpen, setIsOpen] = useState(false)
 	const [rotation, setRotation] = useState(0)
 

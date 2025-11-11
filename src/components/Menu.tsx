@@ -5,7 +5,7 @@ interface MenuProps {
 	onMenuToggle?: (isOpen: boolean) => void
 }
 
-const Menu = ({ onMenuToggle }: MenuProps) => {
+function Menu({ onMenuToggle }: MenuProps) {
 	const [isMenuOpen, setIsMenuOpen] = useState(false)
 	const menuRef = useRef<HTMLDivElement>(null)
 	const toggleButtonRef = useRef<HTMLButtonElement | null>(null)

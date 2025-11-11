@@ -9,12 +9,12 @@ type MenuToggleButtonProps = {
 	buttonRef?: React.RefObject<HTMLButtonElement | null>
 }
 
-const MenuToggleButton = ({
+function MenuToggleButton({
 	isMenuOpen,
 	onToggle,
 	ariaControlsId,
 	buttonRef,
-}: MenuToggleButtonProps) => {
+}: MenuToggleButtonProps) {
 	const [animationDirection, setAnimationDirection] =
 		useState<AnimationDirection>('idle')
 	const previousIsMenuOpen = useRef(isMenuOpen)
