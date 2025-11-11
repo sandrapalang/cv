@@ -19,6 +19,10 @@ const MenuToggleButton = ({
 		useState<AnimationDirection>('idle')
 	const previousIsMenuOpen = useRef(isMenuOpen)
 
+	const handleAnimationEnd = () => {
+		setAnimationDirection('idle')
+	}
+
 	const handleClick = () => {
 		if (animationDirection !== 'idle') return
 
@@ -45,10 +49,6 @@ const MenuToggleButton = ({
 
 		previousIsMenuOpen.current = isMenuOpen
 	}, [isMenuOpen, animationDirection])
-
-	const handleAnimationEnd = () => {
-		setAnimationDirection('idle')
-	}
 
 	return (
 		<button
