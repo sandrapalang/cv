@@ -11,14 +11,14 @@ function MenuToggleIcon({
 	animationDirection,
 	onAnimationEnd,
 }: MenuToggleIconProps) {
-	const baseStateClass = isMenuOpen ? 'state-close' : 'state-open'
-
 	const animationClass =
 		animationDirection === 'openToClose'
 			? 'animation-open-to-close'
 			: animationDirection === 'closeToOpen'
 				? 'animation-close-to-open'
 				: ''
+
+	const baseStateClass = isMenuOpen ? 'state-close' : 'state-open'
 
 	return (
 		<svg
