@@ -2,16 +2,16 @@ interface ChipProps {
 	label: string
 	clickable?: boolean
 	disabled?: boolean
-	selected?: boolean
 	onClick?: () => void
+	selected?: boolean
 }
 
 const Chip = ({
 	label,
 	clickable = false,
 	disabled = false,
-	selected = false,
 	onClick,
+	selected = false,
 }: ChipProps) => {
 	const handleClick = () => {
 		if (clickable && !disabled && onClick) {

@@ -2,35 +2,36 @@ import { useState } from 'react'
 import ChevronDown from '../icons/ChevronDown'
 
 interface AccordionProps {
+	atLabel: string
 	startDate: string
-	endDate?: string
 	title: string
+	content?: string[]
+	company?: string
+	education?: string
+	endDate?: string
+	inLabel?: string
+	isHighlighted?: boolean
 	isInternship?: boolean
 	internship?: string
-	atLabel: string
-	company?: string
-	school?: string
-	inLabel?: string
 	location?: string
-	content?: string[]
+	school?: string
 	skills?: string[]
-	isHighlighted?: boolean
 }
 
 const Accordion = ({
+	atLabel,
 	startDate,
-	endDate,
 	title,
+	content,
+	company,
+	endDate,
+	inLabel,
+	isHighlighted,
 	isInternship = false,
 	internship,
-	atLabel,
-	company,
-	school,
-	inLabel,
 	location,
-	content,
+	school,
 	skills,
-	isHighlighted,
 }: AccordionProps) => {
 	const [isOpen, setIsOpen] = useState(false)
 	const [rotation, setRotation] = useState(0)
