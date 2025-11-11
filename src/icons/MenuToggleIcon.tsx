@@ -1,14 +1,14 @@
 type AnimationDirection = 'idle' | 'openToClose' | 'closeToOpen'
 
 type MenuToggleIconProps = {
-	isMenuOpen: boolean
 	animationDirection: AnimationDirection
+	isMenuOpen: boolean
 	onAnimationEnd: () => void
 }
 
 function MenuToggleIcon({
-	isMenuOpen,
 	animationDirection,
+	isMenuOpen,
 	onAnimationEnd,
 }: MenuToggleIconProps) {
 	const animationClass =
